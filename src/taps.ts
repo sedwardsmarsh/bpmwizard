@@ -5,7 +5,7 @@
  */
 class Taps {
   private static instance: Taps;
-  private tapTimes: number[] = [];
+  private tapTimes_ms: number[] = [];
   private maxTaps: number = 3;
 
   /**
@@ -34,13 +34,11 @@ class Taps {
     const time_ms = Date.now();
 
     // Only store `maxTaps` taps.
-    if (this.tapTimes.length >= this.maxTaps) {
-        this.tapTimes.shift()
+    if (this.tapTimes_ms.length >= this.maxTaps) {
+      this.tapTimes_ms.shift();
     }
 
-    this.tapTimes.push(time_ms)
-
-    console.log(this.tapTimes)
+    this.tapTimes_ms.push(time_ms);
   }
 
   // public static getMeanBpm(): number {
