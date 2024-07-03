@@ -30,6 +30,11 @@ class Taps {
     return Taps.instance;
   }
 
+  /**
+   * Record a time stamp in milliseconds.
+   *
+   * @memberof Taps
+   */
   public addTap(): void {
     const time_ms = Date.now();
 
