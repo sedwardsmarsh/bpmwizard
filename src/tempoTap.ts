@@ -4,11 +4,24 @@ import Taps from "./taps";
  * Setup the tempo tap button.
  *
  * @export
- * @param {HTMLButtonElement} element - Button.
+ * @param {HTMLButtonElement} tapBtn - Button.
+ * @param {HTMLParagraphElement} meanP - Paragraph.
+ * @param {HTMLParagraphElement} medianP - Paragraph.
+ * @param {HTMLParagraphElement} modeP - Paragraph.
+ * @param {HTMLParagraphElement} stddP - Paragraph.
  */
-export function setupTempoTap(element: HTMLButtonElement): void {
-  // Increment `tapCount` when tap button is pressed.
-  element.addEventListener("click", () => Taps.addTap());
+export function setupTempoTap(tapBtn: HTMLButtonElement, meanP: HTMLParagraphElement): void {
+  tapBtn.addEventListener("click", () => {
+    // Record the tap timestamp.
+    Taps.addTap();
+
+    // Calculate Mean.
+    meanP.innerText = `mean: ${Taps.getMeanBpm()}`;
+
+    // Calculate Median.
+    // Calculate Mode.
+    // Calculate Stdd.
+  });
 }
 
 /**
