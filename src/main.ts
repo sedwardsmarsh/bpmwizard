@@ -1,5 +1,5 @@
 import "./style.css";
-import { setupTempoTap as setupTempoTap } from "./counter.ts";
+import { setupTempoTap as setupTempoTap } from "./tempoTap.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
@@ -7,6 +7,11 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <h1>
       BPM Wizard
     </h1>
+
+    <p id="meanBpm">mean : 0<p>
+    <p id="medianBpm">median : 0<p>
+    <p id="modeBpm">mode : 0<p>
+    <p id="stddBpm">stdd : 0<p>
 
     <button id="tap"/>
   
