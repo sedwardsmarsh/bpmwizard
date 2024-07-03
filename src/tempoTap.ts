@@ -1,3 +1,5 @@
+import Taps from "./taps";
+
 /**
  * Setup the tempo tap button.
  *
@@ -5,14 +7,8 @@
  * @param {HTMLButtonElement} element - Button.
  */
 export function setupTempoTap(element: HTMLButtonElement): void {
-  // Initialize the tap count.
-  let tapCount = 0;
-
   // Increment `tapCount` when tap button is pressed.
-  element.addEventListener("click", () => setTapCount(element, tapCount + 1));
-
-  // Initialize the tap count to zero.
-  setTapCount(element, 0);
+  element.addEventListener("click", () => Taps.addTap());
 }
 
 /**
