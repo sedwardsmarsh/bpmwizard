@@ -8,7 +8,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       BPM Wizard
     </h1>
 
-    <button id="tap">Tap</button>
+    <button id="tap"/>
   
   </div>
 `;
