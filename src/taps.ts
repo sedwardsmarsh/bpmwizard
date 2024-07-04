@@ -38,7 +38,7 @@ class Taps {
       this.bpmHistory.shift();
     }
 
-    this.bpmHistory.push(avgBpm);
+    this.bpmHistory.push(isFinite(avgBpm) ? avgBpm : 0);
   }
 
   /**
@@ -52,16 +52,17 @@ class Taps {
       this.tapTimes_ms.shift();
     }
 
-    this.tapTimes_ms.push(time_ms);
+    this.tapTimes_ms.push(isFinite(time_ms) ? time_ms : 0);
   }
 
   /**
    * Get the mean (average) BPM.
    *
-   * @return {*}  {number} Average.
+   * @param {Boolean} [log_calculation=true]
+   * @return {*}  {number}
    * @memberof Taps
    */
-  public getMeanBpm(): number {
+  public getMeanBpm(log_calculation: Boolean = true): number {
     // Calculate average tap period (time between taps).
     const tapPeriods_ms = [];
     for (let i = 1; i < this.tapTimes_ms.length; i++) {
@@ -70,15 +71,15 @@ class Taps {
     const avgTapPeriod_ms =
       tapPeriods_ms.reduce((acc: number, curr: number) => acc + curr, 0) /
       this.tapTimes_ms.length;
-    console.log("avgTapPeriod", avgTapPeriod_ms);
 
     // Calculate average bpm.
     const oneMinuet_ms = 60 * 1000;
     const avgBpm = Math.round(oneMinuet_ms / avgTapPeriod_ms);
-    console.log("avgBpm: ", avgBpm);
 
     // Save the calculated avg bpm.
-    this.addAvgBpm(avgBpm);
+    if (log_calculation == true) {
+      this.addAvgBpm(avgBpm);
+    }
 
     return avgBpm;
   }
@@ -109,14 +110,18 @@ class Taps {
       return 0;
     }
 
+    console.log("getModeBpm(): bpmHistory ", this.bpmHistory);
+
     // Count bpm frequencies.
     let bpmFrequencies: Record<number, number> = {};
     for (const num of this.bpmHistory) {
-      if (!isFinite(num)) {
+      if (num == 0) {
         continue;
       }
       bpmFrequencies[num] = bpmFrequencies[num] ? bpmFrequencies[num] + 1 : 1;
     }
+
+    console.log("getModeBpm(): bpmFrequencies ", bpmFrequencies);
 
     // Find bpm with highest frequency.
     const entries = Object.entries(bpmFrequencies);
@@ -130,9 +135,35 @@ class Taps {
     return Number(modeBpm);
   }
 
-  // public static getMedianBpm(): number
-  // public static getModeBpm(): number
-  // public static getStddBpm(): number
+  /**
+   * Get standard deviation of BPM.
+   *
+   * In other words, the amount of variation in the mean BPM.
+   *
+   * @return {*}  {number}
+   * @memberof Taps
+   */
+  public getStddBpm(): number {
+    // Get the mean BPM.
+    const mean = this.getMeanBpm(false);
+
+    // Calculate the squared mean difference of each bpm: (x_i - u)^2
+    const squaredMeanDifference: number[] = this.bpmHistory.map((bpm) => {
+      return Math.pow(bpm - mean, 2);
+    });
+
+    // Sum the squared mean differences
+    const squaredMeanDifferenceSum = squaredMeanDifference.reduce(
+      (acc, curr) => acc + curr,
+      0
+    );
+
+    // Divide by population size and take the square root.
+    const stdd = Math.sqrt(squaredMeanDifferenceSum / this.bpmHistory.length);
+
+    // Round standard deviation to hundreths.
+    return Number(stdd.toFixed(2));
+  }
 }
 
 export default Taps.getInstance();
