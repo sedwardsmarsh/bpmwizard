@@ -46,9 +46,7 @@ class Taps {
    *
    * @memberof Taps
    */
-  public addTap(): void {
-    const time_ms = Date.now();
-
+  public addTap(time_ms: number = Date.now()): void {
     // Only store `maxTaps` taps.
     if (this.tapTimes_ms.length >= this.maxTaps) {
       this.tapTimes_ms.shift();
