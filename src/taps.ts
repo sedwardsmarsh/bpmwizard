@@ -7,6 +7,8 @@ class Taps {
   private static instance: Taps;
   private tapTimes_ms: number[] = [];
   private maxTaps: number = 20;
+  private bpmHistory: number[] = [];
+  private maxBpmHistory: number = 20;
 
   /**
    * Creates an instance of Taps.
@@ -28,6 +30,15 @@ class Taps {
       Taps.instance = new Taps();
     }
     return Taps.instance;
+  }
+
+  public addAvgBpm(avgBpm: number): void {
+    // Only store `maxTaps` taps.
+    if (this.bpmHistory.length >= this.maxBpmHistory) {
+      this.bpmHistory.shift();
+    }
+
+    this.bpmHistory.push(avgBpm);
   }
 
   /**
