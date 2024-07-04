@@ -76,9 +76,58 @@ class Taps {
     const oneMinuet_ms = 60 * 1000;
     const avgBpm = Math.round(oneMinuet_ms / avgTapPeriod_ms);
     console.log("avgBpm: ", avgBpm);
-    console.log("taps: ", this.tapTimes_ms);
 
-    return avgBpm
+    // Save the calculated avg bpm.
+    this.addAvgBpm(avgBpm);
+
+    return avgBpm;
+  }
+
+  /**
+   * Get the median (middle number) BPM.
+   *
+   * @return {*}  {number}
+   * @memberof Taps
+   */
+  public getMedianBpm(): number {
+    if (this.bpmHistory.length == 0) {
+      return 0;
+    }
+
+    const mid = Math.round(this.bpmHistory.length / 2);
+    return this.bpmHistory[mid];
+  }
+
+  /**
+   * Get the mode (frequency of each number) BPM.
+   *
+   * @return {*}  {number}
+   * @memberof Taps
+   */
+  public getModeBpm(): number {
+    if (this.bpmHistory.length == 0) {
+      return 0;
+    }
+
+    // Count bpm frequencies.
+    let bpmFrequencies: Record<number, number> = {};
+    for (const num of this.bpmHistory) {
+      if (!isFinite(num)) {
+        continue;
+      }
+      bpmFrequencies[num] = bpmFrequencies[num] ? bpmFrequencies[num] + 1 : 1;
+    }
+
+    // Find bpm with highest frequency.
+    const entries = Object.entries(bpmFrequencies);
+    let modeBpm: string = entries[0][0];
+    entries.forEach(([bpm, freq]) => {
+      if (freq > bpmFrequencies[Number(modeBpm)]) {
+        modeBpm = bpm;
+      }
+    });
+
+    return Number(modeBpm);
   }
 
   // public static getMedianBpm(): number
