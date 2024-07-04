@@ -18,4 +18,10 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
-setupTempoTap(document.querySelector<HTMLButtonElement>("#tap")!);
+setupTempoTap(
+  document.querySelector<HTMLButtonElement>("#tap")!,
+  document.querySelector<HTMLParagraphElement>("#meanBpm")!,
+  document.querySelector<HTMLParagraphElement>("#medianBpm")!,
+  document.querySelector<HTMLParagraphElement>("#modeBpm")!,
+  document.querySelector<HTMLParagraphElement>("#stddBpm")!
+);

@@ -10,7 +10,13 @@ import Taps from "./taps";
  * @param {HTMLParagraphElement} modeP - Paragraph.
  * @param {HTMLParagraphElement} stddP - Paragraph.
  */
-export function setupTempoTap(tapBtn: HTMLButtonElement, meanP: HTMLParagraphElement): void {
+export function setupTempoTap(
+  tapBtn: HTMLButtonElement,
+  meanP: HTMLParagraphElement,
+  medianP: HTMLParagraphElement,
+  modeP: HTMLParagraphElement,
+  stddP: HTMLParagraphElement
+): void {
   tapBtn.addEventListener("click", () => {
     // Record the tap timestamp.
     Taps.addTap();
@@ -19,8 +25,13 @@ export function setupTempoTap(tapBtn: HTMLButtonElement, meanP: HTMLParagraphEle
     meanP.innerText = `mean: ${Taps.getMeanBpm()}`;
 
     // Calculate Median.
+    medianP.innerText = `median: ${Taps.getMedianBpm()}`;
+
     // Calculate Mode.
+    modeP.innerText = `mode: ${Taps.getModeBpm()}`;
+
     // Calculate Stdd.
+    stddP.innerText = `stdd: ${Taps.getStddBpm()}`;
   });
 }
 
