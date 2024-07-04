@@ -110,8 +110,6 @@ class Taps {
       return 0;
     }
 
-    console.log("getModeBpm(): bpmHistory ", this.bpmHistory);
-
     // Count bpm frequencies.
     let bpmFrequencies: Record<number, number> = {};
     for (const num of this.bpmHistory) {
@@ -120,8 +118,6 @@ class Taps {
       }
       bpmFrequencies[num] = bpmFrequencies[num] ? bpmFrequencies[num] + 1 : 1;
     }
-
-    console.log("getModeBpm(): bpmFrequencies ", bpmFrequencies);
 
     // Find bpm with highest frequency.
     const entries = Object.entries(bpmFrequencies);
