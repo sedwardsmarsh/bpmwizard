@@ -8,10 +8,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       BPM Wizard
     </h1>
 
-    <p id="meanBpm">mean : 0<p>
-    <p id="medianBpm">median : 0<p>
-    <p id="modeBpm">mode : 0<p>
-    <p id="stddBpm">stdd : 0<p>
+    <div id="readout">
+      <p id="meanBpm">mean : 0<p>
+      <p id="medianBpm">median : 0<p>
+      <p id="modeBpm">mode : 0<p>
+      <p id="stddBpm">stdd : 0<p>
+    </div>
 
     <button id="tap"/>
   
@@ -19,9 +21,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 
 setupTempoTap(
-  document.querySelector<HTMLButtonElement>("#tap")!,
-  document.querySelector<HTMLParagraphElement>("#meanBpm")!,
-  document.querySelector<HTMLParagraphElement>("#medianBpm")!,
-  document.querySelector<HTMLParagraphElement>("#modeBpm")!,
-  document.querySelector<HTMLParagraphElement>("#stddBpm")!
+    document.querySelector<HTMLButtonElement>("#tap")!,
+    document.querySelector<HTMLParagraphElement>("#meanBpm")!,
+    document.querySelector<HTMLParagraphElement>("#medianBpm")!,
+    document.querySelector<HTMLParagraphElement>("#modeBpm")!,
+    document.querySelector<HTMLParagraphElement>("#stddBpm")!
 );
