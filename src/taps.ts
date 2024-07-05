@@ -121,7 +121,7 @@ class Taps {
 
     // Find bpm with highest frequency.
     const entries = Object.entries(bpmFrequencies);
-    let modeBpm: string = entries[0][0];
+    let modeBpm: string = entries[0] === undefined ? "" : entries[0][0];
     entries.forEach(([bpm, freq]) => {
       if (freq > bpmFrequencies[Number(modeBpm)]) {
         modeBpm = bpm;
