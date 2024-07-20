@@ -22,16 +22,16 @@ export function setupTempoTap(
     Taps.addTap();
 
     // Calculate Mean.
-    meanP.innerText = `mean: ${Taps.getMeanBpm()}`;
+    meanP.innerText = `${Taps.getMeanBpm()}`;
 
     // Calculate Median.
-    medianP.innerText = `median: ${Taps.getMedianBpm()}`;
+    medianP.innerText = `${Taps.getMedianBpm()}`;
 
     // Calculate Mode.
-    modeP.innerText = `mode: ${Taps.getModeBpm()}`;
+    modeP.innerText = `${Taps.getModeBpm()}`;
 
     // Calculate Stdd.
-    stddP.innerText = `stdd: ${Taps.getStddBpm()}`;
+    stddP.innerText = `${Taps.getStddBpm()}`;
   });
 }
 

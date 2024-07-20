@@ -2,7 +2,7 @@ import "./style.css";
 import { setupTempoTap as setupTempoTap } from "./tempoTap.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
+  <div class="parent">
   
     <h1>
       BPM Wizard
@@ -10,10 +10,25 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
     <div id="readout">
 
-      <p id="meanBpm">mean : 0</p>
-      <p id="medianBpm">median : 0</p>
-      <p id="modeBpm">mode : 0</p>
-      <p id="stddBpm">stdd : 0</p>
+      <div class="statRow">
+        <p class="desc">meanBpm:</p> 
+        <p class="data" id="meanBpm">0</p>
+      </div>
+
+      <div class="statRow">
+        <p class="desc">medianBpm:</p> 
+        <p class="data" id="medianBpm">0</p>
+      </div>
+
+      <div class="statRow">
+        <p class="desc">modeBpm:</p> 
+        <p class="data" id="modeBpm">0</p>
+      </div>
+
+      <div class="statRow">
+        <p class="desc">stddBpm:</p> 
+        <p class="data" id="stddBpm">0</p>
+      </div>
       
     </div>
 
