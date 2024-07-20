@@ -15,7 +15,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <p id="stddBpm">stdd : 0</p>
     </div>
 
-    <button id="tap"/>
+    <button id="tap"/>Tap Me</button>
   
   </div>
 `;
