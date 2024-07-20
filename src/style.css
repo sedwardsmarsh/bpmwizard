@@ -47,6 +47,22 @@ h1 {
   text-align: center;
 }
 
+h1.header {
+  color: red;
+}
+
+@keyframes button {
+  to {
+    background-color: rgba(255, 255, 255, 0.87);
+    border: 1px solid;
+    font-weight: 1;
+  }
+  from {
+    background-color: #ffe3db;
+    border: 3px solid;
+  }
+}
+
 button {
   width: 200px;
   height: 200px;
@@ -56,20 +72,29 @@ button {
   font-weight: 500;
   font-family: inherit;
   text-align: center;
-  background-color: #1a1a1a;
   cursor: pointer;
   color: #5f67ff;
   border-color: #9ba0ff;
+  background-color: #d8daf8;
 
   transition: all 0.5s ease-out;
+
+  animation-name: button;
+  animation-duration: 1.5s;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 button:hover {
   color: #3640ec;
   border-color: #3640ec;
   background-color: #d8daf8;
 
-  border: 5px solid;
+  border: 3px solid;
   border-radius: 20px;
+
+  animation-iteration-count: 1;
 }
 button:active {
   color: #ffb589;
@@ -82,6 +107,8 @@ button:active {
   font-weight: 800;
 
   transition: all 10ms;
+
+  animation-iteration-count: 1;
 }
 
 /* TODO: Update light-mode color scheme. */
