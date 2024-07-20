@@ -9,10 +9,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     </h1>
 
     <div id="readout">
+
       <p id="meanBpm">mean : 0</p>
       <p id="medianBpm">median : 0</p>
       <p id="modeBpm">mode : 0</p>
       <p id="stddBpm">stdd : 0</p>
+      
     </div>
 
     <button id="tap"/>Tap Me</button>
