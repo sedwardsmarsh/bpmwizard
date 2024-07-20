@@ -35,12 +35,12 @@ export function setupTempoTap(
   });
 }
 
-/**
- * Update the tap count.
- *
- * @param {HTMLButtonElement} element
- * @param {number} tapCount
- */
-function setTapCount(element: HTMLButtonElement, tapCount: number): void {
-  element.innerHTML = `Tap for tempo ${tapCount}`;
-}
+// /**
+//  * Update the tap count.
+//  *
+//  * @param {HTMLButtonElement} element
+//  * @param {number} tapCount
+//  */
+// function setTapCount(element: HTMLButtonElement, tapCount: number): void {
+//   element.innerHTML = `Tap for tempo ${tapCount}`;
+// }
