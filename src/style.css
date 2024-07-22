@@ -162,16 +162,10 @@ button:active {
   display: contents;
 }
 
-.statRow p:nth-child(2) {
-  width: 7ch;
-}
-
 .desc {
   margin-left: 10px;
-
-  /* background-color: yellowgreen; */
 }
 
 .data {
-  /* background-color: yellow; */
+  width: 7ch;
 }
