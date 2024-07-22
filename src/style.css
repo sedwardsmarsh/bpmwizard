@@ -142,7 +142,7 @@ button:active {
   }
 }
 
-#readout {
+.readout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem 1rem;
@@ -154,7 +154,7 @@ button:active {
   width: min-content;
 }
 
-#readout p {
+.readout p {
   height: auto;
 }
 
