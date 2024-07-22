@@ -11,22 +11,22 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <div id="readout">
 
       <div class="statRow">
-        <p class="desc">meanBpm:</p> 
+        <p class="desc">meanBpm</p> 
         <p class="data" id="meanBpm">0</p>
       </div>
 
       <div class="statRow">
-        <p class="desc">medianBpm:</p> 
+        <p class="desc">medianBpm</p> 
         <p class="data" id="medianBpm">0</p>
       </div>
 
       <div class="statRow">
-        <p class="desc">modeBpm:</p> 
+        <p class="desc">modeBpm</p> 
         <p class="data" id="modeBpm">0</p>
       </div>
 
       <div class="statRow">
-        <p class="desc">stddBpm:</p> 
+        <p class="desc">stddBpm</p> 
         <p class="data" id="stddBpm">0</p>
       </div>
       
