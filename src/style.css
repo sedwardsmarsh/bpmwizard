@@ -152,7 +152,7 @@ button:active {
 
   width: min-content;
 
-  background-color: rgb(159, 159, 255);
+  /* background-color: rgb(159, 159, 255); */
 }
 
 #readout p {
@@ -170,9 +170,9 @@ button:active {
 .desc {
   margin-left: 10px;
 
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 
 .data {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
