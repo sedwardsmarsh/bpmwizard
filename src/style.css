@@ -150,9 +150,8 @@ button:active {
   margin-top: 25px;
   margin-bottom: 25px;
 
+  /* Shrinkwrap */
   width: min-content;
-
-  /* background-color: rgb(159, 159, 255); */
 }
 
 #readout p {
