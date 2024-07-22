@@ -38,9 +38,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 
 setupTempoTap(
-    document.querySelector<HTMLButtonElement>("#tap")!,
-    document.querySelector<HTMLParagraphElement>("#meanBpm")!,
-    document.querySelector<HTMLParagraphElement>("#medianBpm")!,
-    document.querySelector<HTMLParagraphElement>("#modeBpm")!,
-    document.querySelector<HTMLParagraphElement>("#stddBpm")!
+  document.querySelector<HTMLButtonElement>("#tap")!,
+  document.querySelector<HTMLParagraphElement>("#meanBpm")!,
+  document.querySelector<HTMLParagraphElement>("#medianBpm")!,
+  document.querySelector<HTMLParagraphElement>("#modeBpm")!,
+  document.querySelector<HTMLParagraphElement>("#stddBpm")!
 );
