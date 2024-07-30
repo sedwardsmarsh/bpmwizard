@@ -45,3 +45,27 @@ setupTempoTap(
   document.querySelector<HTMLParagraphElement>(".modeBpm")!,
   document.querySelector<HTMLParagraphElement>(".stddBpm")!
 );
+
+// Spacebar triggers tap button.
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Space") {
+    // Prevent the default spacebar action (scrolling down the page)
+    event.preventDefault();
+
+    // Trigger the button click
+    const button = document.querySelector<HTMLButtonElement>(".tap");
+    if (button) {
+      // Add the class that simulates the active state
+      button.classList.add("active-style");
+
+      // Remove the class after a short delay to simulate the :active state
+      setTimeout(() => {
+        button.classList.remove("active-style");
+        button.classList.add("")
+      }, 100); // 100ms is an arbitrary short delay
+
+      // Programmatically trigger the button click
+      button.click();
+    }
+  }
+});
