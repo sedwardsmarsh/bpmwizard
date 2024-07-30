@@ -3,7 +3,7 @@ import { setupTempoTap as setupTempoTap } from "./tempoTap.ts";
 
 // Initialize page content.
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div class="parent">
+  <div class="parent disable-dbl-tap-zoom">
   
     <h1>
       BPM Wizard

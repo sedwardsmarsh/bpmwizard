@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+/* Utility class which disables zoom when double-tapping on touch screens. */
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
