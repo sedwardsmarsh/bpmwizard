@@ -75,7 +75,7 @@ document.addEventListener("keydown", function (event) {
       // Remove the class after a short delay to simulate the :active state
       setTimeout(() => {
         button.classList.remove("active-style");
-        button.classList.add("")
+        button.classList.add("");
       }, 100); // 100ms is an arbitrary short delay
 
       // Programmatically trigger the button click
