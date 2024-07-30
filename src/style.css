@@ -54,19 +54,7 @@ h1 {
   align-items: center;
 }
 
-@keyframes button {
-  to {
-    background-color: rgba(255, 255, 255, 0.87);
-    border: 1px solid;
-    font-weight: 1;
-  }
-  from {
-    background-color: #ffe3db;
-    border: 3px solid;
-  }
-}
-
-button {
+.tap {
   width: 200px;
   height: 200px;
   border-radius: 8px;
@@ -79,27 +67,18 @@ button {
   color: #5f67ff;
   border-color: #9ba0ff;
   background-color: #d8daf8;
-
-  transition: all 0.5s ease-out;
-
-  animation-name: button;
-  animation-duration: 1.5s;
-  animation-delay: 3s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
 }
-button:hover {
+
+.tap:hover {
   color: #3640ec;
   border-color: #3640ec;
   background-color: #d8daf8;
 
   border: 3px solid;
   border-radius: 20px;
-
-  animation-iteration-count: 1;
 }
-button:active {
+
+.tap:active {
   color: #ffb589;
   border-color: #ffb589;
   background-color: #ddc9fc;
@@ -108,10 +87,20 @@ button:active {
   border-radius: 3px;
 
   font-weight: 800;
+}
 
-  transition: all 10ms;
+/* Mimic the active state of the button. */
+/* This class will be re-added to the .tap button whenever the spacebar is 
+   pressed. */
+.tap.active-style {
+  color: #ffb589;
+  border-color: #ffb589;
+  background-color: #ddc9fc;
 
-  animation-iteration-count: 1;
+  border: 1px solid;
+  border-radius: 3px;
+
+  font-weight: 800;
 }
 
 /* TODO: Update light-mode color scheme. */
