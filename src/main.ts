@@ -17,6 +17,11 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </div>
 
       <div class="statRow">
+        <p class="desc">stddBpm</p> 
+        <p class="data stddBpm">0</p>
+      </div>
+
+      <div class="statRow">
         <p class="desc">medianBpm</p> 
         <p class="data medianBpm">0</p>
       </div>
@@ -24,11 +29,6 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <div class="statRow">
         <p class="desc">modeBpm</p> 
         <p class="data modeBpm">0</p>
-      </div>
-
-      <div class="statRow">
-        <p class="desc">stddBpm</p> 
-        <p class="data stddBpm">0</p>
       </div>
       
     </div>
@@ -42,7 +42,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <br>
     <br>
     BPM is an abbreviation for Beats Per Minute. This utility calculates an 
-    average (mean), median, mode, and standard deviation BPM for you.
+    average (mean), standard deviation, median, and mode BPM for you.
     <br>
     <br>
     <a class="footer" href=https://www.samedwardsmarsh.com/>Made by Sam.
