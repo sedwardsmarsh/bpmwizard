@@ -1,6 +1,7 @@
 import "./style.css";
 import { setupTempoTap as setupTempoTap } from "./tempoTap.ts";
 
+// Initialize page content.
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="parent">
   
