@@ -35,6 +35,19 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
     <button class="tap"/>Tap Me</button>
   
+    <p class="content">Welcome to BPM Wizard!
+    <br>
+    Click the "Tap Me" button or press the spacebar to find the BPM of what 
+    you're listening to.
+    <br>
+    <br>
+    BPM is an abbreviation for Beats Per Minute. This utility calculates an 
+    average (mean), median, mode, and standard deviation BPM for you.
+    <br>
+    <br>
+    <a class="footer" href=https://www.samedwardsmarsh.com/>Made by Sam.
+    </a></p>
+
   </div>
 `;
 
