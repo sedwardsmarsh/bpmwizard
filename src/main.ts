@@ -12,13 +12,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <div class="readout">
 
       <div class="statRow">
-        <p class="desc">meanBpm</p> 
-        <p class="data meanBpm">0</p>
+        <p class="desc bigDesc">meanBpm</p> 
+        <p class="data bigData meanBpm">0</p>
       </div>
 
       <div class="statRow">
-        <p class="desc">stddBpm</p> 
-        <p class="data stddBpm">0</p>
+        <p class="desc bigDesc">stddBpm</p> 
+        <p class="data bigData stddBpm">0</p>
       </div>
 
       <div class="statRow">

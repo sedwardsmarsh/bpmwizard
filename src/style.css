@@ -157,9 +157,28 @@ h1 {
 }
 
 .desc {
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 .data {
   width: 7ch;
+}
+
+.bigDesc {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.bigData {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.content {
+  margin-top: 25px;
+  color: #999ab3;
+}
+
+.footer {
+  margin-top: 25px;
 }
