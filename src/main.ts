@@ -37,6 +37,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
+// Initialize calculation engine.
 setupTempoTap(
   document.querySelector<HTMLButtonElement>(".tap")!,
   document.querySelector<HTMLParagraphElement>(".meanBpm")!,
